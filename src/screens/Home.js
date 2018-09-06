@@ -18,7 +18,7 @@ const Home = () => {
       </ul>
 
       <h2 className='heading is-xl'>Demo</h2>
-      <Link to='/form' className='btn is-primary is-plain'>Formのデモ</Link>
+      <Link to='/form' className='btn is-success is-plain'>Formのデモ</Link>
     </div>
   )
 }
