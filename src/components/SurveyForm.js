@@ -13,11 +13,13 @@ class SurveyForm extends React.Component {
     this.state = {
       name: '',
       email: '',
+      member: 'mirin',
       opinion: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.isValid = this.isValid.bind(this);
   }
 
   handleSubmit(e) {
@@ -35,6 +37,10 @@ class SurveyForm extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  isValid() {
+    return !(this.state.email !== '' && this.state.name !== '' && this.state.opinion !== '');
   }
 
   render() {
@@ -63,6 +69,23 @@ class SurveyForm extends React.Component {
             onChange={this.handleChange}
           />
         </div>
+        <p className='heading'>推しメン</p>
+        <div className='field'>
+          <div className='select'>
+            <select
+              name='member'
+              onChange={this.handleChange}
+            >
+              <option value='mirin'>古川未鈴</option>
+              <option value='risa'>相沢梨紗</option>
+              <option value='nemu'>夢眠ねむ</option>
+              <option value='eitaso'>成瀬瑛美</option>
+              <option value='pinky'>藤咲彩音</option>
+              <option value='perorin'>鹿目凛</option>
+              <option value='nemo'>根本凪</option>
+            </select>       
+          </div>
+        </div>
         <p className='heading'>ご意見・感想など</p>
         <div className='field'>
           <textarea
@@ -72,7 +95,10 @@ class SurveyForm extends React.Component {
           />
         </div>
         <div className='btns'>
-          <button className='btn is-plain is-primary is-mobile-full' type='submit'>送信</button>
+          <button
+            className='btn is-plain is-primary is-mobile-full' type='submit'
+            disabled={this.isValid()}
+          >送信</button>
         </div>
       </form>
     )
