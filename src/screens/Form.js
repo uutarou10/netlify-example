@@ -7,7 +7,7 @@ const Form = () => {
       <h2 className='heading is-xl is-strong'>Form demo</h2>
       <p>
         Form機能のデモです。<br />
-        SPAのFormタグはNetlifyが認識してくれないので、HTMLに手を加える必要があります。
+        動的に追加されたFormタグはNetlifyがビルドの際に認識してくれないので、HTMLに手を加える必要があります。
       </p>
       <p>
         参考: <a
