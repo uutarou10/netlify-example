@@ -11,7 +11,7 @@ const Home = () => {
 
       <h2 className='heading is-xl'>使用ライブラリ</h2>
       <ul className='list is-disc'>
-        <li className='item'>React</li>
+        <li className='item'>react</li>
         <li className='item'>react-router-dom</li>
         <li className='item'>react-helmet</li>
         <li className='item'>musubii (CSS Framework)</li>
