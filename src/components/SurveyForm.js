@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -26,7 +27,7 @@ class SurveyForm extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "survey", ...this.state })
     })
-      .then(() => alert("Success!"))
+      .then(() => this.props.history.push('/form/thanks'))
       .catch(error => alert(error));
   }
 
@@ -78,4 +79,4 @@ class SurveyForm extends React.Component {
   }
 }
 
-export default SurveyForm;
+export default withRouter(SurveyForm);
