@@ -14,10 +14,13 @@ class SurveyForm extends React.Component {
       email: '',
       opinion: ''
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -25,7 +28,6 @@ class SurveyForm extends React.Component {
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
-    e.preventDefault();
   }
 
   handleChange(e) {
