@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import Home from './screens/Home';
 import Form from './screens/Form';
 import Thanks from './screens/Thanks';
+import NotFound from './screens/NotFound';
 import './style.css';
 import 'musubii';
 
@@ -27,6 +28,7 @@ class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/form' component={Form} />
                 <Route exact path='/form/thanks' component={Thanks} />
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>
